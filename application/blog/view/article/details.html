@@ -1,0 +1,35 @@
+{extend name="blog@public/basic" /}
+{block name="style"}
+ <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/article.css">
+{/block}
+{block name="cotent"}
+<div class="content center">
+    <h1 class="title" title="{$details.title}">{$details.title}</h1>
+    <div class="label">
+        <p class="read-push">阅读 <span>{$details.clicks}</span>&nbsp;&nbsp;&nbsp;&nbsp;发布时间：<span>{$details.create_at}</span></p>
+    </div>
+    <section id="case_section" class="case_section">
+      {$details.content|default=''|raw}
+      <p><br/></p>
+    </section>
+
+
+    <div class="next">
+        {empty name="last"}
+    
+        {else /}
+        <a href="/arti_detail/{$last.id}.html" class="a">上一篇({$last.title})</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        {/empty}
+        {empty name="next"}
+
+        {else /}
+        <a href="/arti_detail/{$next.id}.html" class="b">下一篇({$next.title})</a>
+        {/empty}
+    </div>
+</div>
+  
+  
+  {include file="blog@public/footer" /}
+
+
+{/block}

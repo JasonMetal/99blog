@@ -1,0 +1,36 @@
+{extend name="blog@public/basic" /}
+{block name="style"}
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/swiper-3.4.0.min.css" /> 
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/contact.css" />
+{/block}
+{block name="cotent"}
+
+  <div class="container">
+        <div class="about_box">
+            <div class="about_left animated "> 
+              <h3>CONTACT US</h3> 
+              <h3><span>联系</span>我们</h3> 
+              <ul class="company_info"> 
+                 <li><i class="iconfont"></i>{$SysInfo.Author}</li> 
+                 <li><i class="iconfont"></i>{$SysInfo.Author2}</li> 
+                 <li><i class="iconfont"></i>QQ:{$SysInfo.qq}{$SysInfo.qq2}</li> 
+                 <li><i class="iconfont"></i>{$SysInfo.Email}</li> 
+              </ul>  
+              <p>{$SysInfo.BlogFooterName} 版权所有  <a href="http://www.miitbeian.gov.cn" style="color:#fff">{$SysInfo.Beian}</a></p> 
+            </div>
+            <div class="about_right"> 
+                <form name="contact-form" id="contact-form" action="cerate" method="post"> 
+                 <ul> 
+                  <li><input type="text" name="nickname" placeholder="您的姓名：" /></li> 
+                  <li><input type="text" name="contact" placeholder="您的联系方式：" /></li> 
+                  <li><textarea name="content" placeholder="您的需求或者建议："></textarea></li> 
+                  <li><input type="submit" value="提交" /></li> 
+                 </ul> 
+                </form> 
+            </div>
+        </div>
+        <div class="map_block"></div>
+</div>
+  {include file="blog@public/footer" /}
+
+{/block}

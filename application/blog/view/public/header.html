@@ -1,0 +1,20 @@
+<div class="header"> 
+
+ <div class="logo"> 
+  <h2>
+    <img src="__PUBLIC__/home/images/logo.png" alt="广州得翼网络科技有限公司" />
+  </h2> 
+ </div> 
+
+ <div class="nav nav-collapse nav-collapse nav-collapse-0 closed"> 
+  <ul class="nav"> 
+
+      {volist name="keyword" id="vo"}
+          <li>
+              <a href="/{$vo.name}.html" keywords="{$vo.value}" describe="{$vo.describe}" title="{$vo.remark}">{$vo.remark}</a>
+          </li>
+      {/volist}
+
+  </ul> 
+ </div> 
+</div> 

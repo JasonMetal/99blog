@@ -1,0 +1,90 @@
+{extend name="blog@public/basic" /}
+{block name="style"}
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/casement.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/case_list.css" /> 
+{/block}
+
+{block name="cotent"}
+  <div class="select_area"> 
+   <div class="main_menu">
+   <div class="new-bg">
+      <img src="__PUBLIC__/home/images/case-banner.jpg" alt="">
+    </div> 
+   </div>  
+  </div> 
+  <div class="cases_show"> 
+    <div class="case">
+      <ul>
+        {volist name="cate_list" id="vo"}
+        <li>
+          <a href="/casement/cate/{$vo.id}.html" class="{if $vo.id eq $casecategory}on{/if}">{$vo.title}</a>
+        </li>
+        {/volist}
+      </ul>
+            
+    </div>
+    <div class="case-product">
+        <ul>
+            {volist name='case_list' id='vo'}
+            <li>
+              <a href="javascript:;">
+                <img src="{$vo.cover_img|default=''}" alt="">
+                <p>{$vo.title}</p>
+                <span></span>
+              </a>
+            </li>
+            {/volist}
+        </ul>
+    </div>
+
+
+   <div class="page_block"> 
+    <div class="pagination-wrp text-center"> 
+     <div class="text-center">
+      <ul class="pagination">
+        {$case_list->render()|raw}
+      </ul>
+
+      {empty name="ifexif_page"}
+
+      <ul class="pagination">
+          <li>
+            <span>«</span>
+          </li> 
+          <li  class="active">
+            <a href="#" class="disabled">1</a>
+          </li>
+          <li class="disabled">
+            <span>»</span>
+          </li>
+      </ul>
+      <span class="pagination">
+          <form action="product" method="get">
+            <span class="form-label">跳转到:</span>
+            <input class="form-input" type="text" />
+            <input type="submit" value="go" class="form-submit" disabled>
+          </form>
+      </span>  
+      {else /}
+      <span class="pagination">
+          <form action="product" method="get">
+            <span class="form-label">跳转到:</span>
+            <input class="form-input" name="page" type="text"/>
+            <input type="submit" value="go" class="form-submit">
+          </form>
+        </span>  
+        
+
+      {/empty}
+      
+
+     </div> 
+    </div> 
+
+   </div>  
+
+
+  </div> 
+    {include file="blog@public/footer" /}
+
+{/block}

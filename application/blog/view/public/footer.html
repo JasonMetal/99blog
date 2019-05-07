@@ -1,0 +1,107 @@
+  <footer> 
+   <div class="footer-box"> 
+    <div class="center"> 
+     <div class=" footer-ct"> 
+      <p class="ft-ct-title">联系我们</p> 
+      <p class="ft-ct-addr">{$SysInfo.address}</p> 
+      <p class="ft-ct-user">{$SysInfo.Author}</p> 
+     </div> 
+     <div class=" footer-logo"> 
+      <p>得翼--您的品牌产品顾问</p> 
+     </div> 
+     <div class=" footer-sns"> 
+      <div class="sns-weibo-qr sns-all-grid"> 
+        
+        <span class="qr-img" style="background-image: url({$config_list['0']['value']});"></span> 
+        <p class="ft-sns-title">{$config_list['7']['value']}</p> 
+
+      </div> 
+
+        <span class="sns-weibo-qr"> <span class="qr-img" style="background-image: url({$config_list['6']['value']});"></span>
+        <p class="ft-sns-title">{$config_list['8']['value']}</p> 
+        </span> 
+
+     </div> 
+    </div> 
+    <div class="footer-cp"> 
+     <div class="cp-center">
+       {$SysInfo.FooterName|default=''}
+      <a href="http://www.miibeian.gov.cn/">{$SysInfo.Beian|default=''}</a> 
+     </div> 
+    </div> 
+   </div> 
+  </footer> 
+  <!-- end footer --> 
+  <div class="fixed-bottom"> 
+   <a class="m-tel" href="javascript:;">联系我们吧！</a> 
+   <a class="m-qq" href="javascript:;"><i class="iconfont"></i></a> 
+   <div class="m-back">
+    返回
+   </div> 
+   <div class="slideUp"> 
+    <div class="m-code-box"> 
+     <div class="m-code-center"> 
+      <div class="process"> 
+       <h4>1.按住二维码保存到手机</h4> 
+       <h4>2.打开微信扫码图片</h4> 
+      </div> 
+      <div class="m-code-img"> 
+       <img class="tCode" src="{$config_list['0']['value']}" /> 
+       <span></span> 
+       <h5>{$config_list['7']['value']}</h5> 
+      </div> 
+      <div class="code-arrow"></div> 
+     </div> 
+    </div> 
+    <div class="m-contact-list"> 
+     <img class="middle" src="__PUBLIC__/home/images/m_contact.png" /> 
+     <ul> 
+      <li> <h5>{$config_list['7']['value']}</h5> <a href="{$SysInfo.Author}"><i class="iconfont"></i>电话</a> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$SysInfo.qq}&amp;site=qq&amp;menu=yes"><i class="iconfont"></i>QQ</a> </li> 
+      <li> <h5>{$config_list['8']['value']}</h5> <a href="{$SysInfo.Author2}"><i class="iconfont"></i>电话</a> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$SysInfo.qq2}&amp;site=qq&amp;menu=yes"><i class="iconfont"></i>QQ</a> </li> 
+     </ul> 
+    </div> 
+   </div>
+  </div> 
+  <div class="right-side-fixed">
+    <ul>
+        <li>
+            <div class="rsf-link tel">
+                <i class="iconfont"></i>
+                <span class="text">电话</span>
+                <div class="tel_box">
+                    <div class="bg">
+                        <h6><i class="iconfont"></i>免费咨询热线：</h6>
+                        <h4><a href="{$SysInfo.Author}">{$SysInfo.Author}</a></h4>
+                        <h4><a href="{$SysInfo.Author2}">{$SysInfo.Author2}</a></h4>
+                    </div>
+                    <span class="san"></span>
+                </div>
+            </div>
+        </li>
+        <li>
+        <div class="rsf-link qq">
+        <i class="iconfont"></i>
+                <span class="text">QQ</span>
+                <div class="qq_box">
+                    <div class="bg">
+                        <h6><i class="iconfont"></i>QQ免费咨询</h6>
+                        <h6>在线沟通，请点击</h6>
+                        <div class="btn_g">
+                            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$SysInfo.qq}&amp;site=qq&amp;menu=yes">{$config_list['7']['value']}</a>
+                            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin={$SysInfo.qq2}&amp;site=qq&amp;menu=yes">{$config_list['8']['value']}</a>
+                        </div>
+                    </div>
+                    <span class="san"></span>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <a class="rsf-link rsf-top" href="javascript:;" style="display: none;">
+                <i class="si si-top"></i>
+                <span class="text">回到页首</span>
+            </a>
+        </li>
+    </ul>
+  </div> 
+

@@ -1,0 +1,76 @@
+{extend name="blog@public/basic" /}
+{block name="style2"}
+ <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/article.css">
+{/block}
+{block name="cotent"}
+  <div class="select_area"> 
+   <div class="main_menu">
+   <div class="new-bg">
+      <img src="__PUBLIC__/home/images/news-banner.jpg" alt="">
+    </div> 
+   </div>  
+  </div> 
+  <div class="cases_show"> 
+   <ul class="cases_list"> 
+    {volist name='article_list' id='vo'}
+   <li>
+      <div class="new-img">
+          <img src="{$vo.cover_img|default=''}" alt="">
+      </div>
+      <div class="new-txt">
+          <strong><a href="/arti_detail/{$vo.id}.html">{$vo.title|default=''}</a></strong>
+          <p class="detail">
+            <span>{$vo.describe|default=''}</span>
+          </p>
+          <p class="read-push">阅读 <span>{$vo.clicks}</span>&nbsp;&nbsp;&nbsp;&nbsp;发布时间：<span>{$vo.create_at}</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/arti_detail/{$vo.id}.html">[详细]</a></p>
+      </div>
+    </li>
+    {/volist}
+   </ul> 
+
+   <div class="page_block"> 
+    <div class="pagination-wrp text-center"> 
+     <div class="text-center">
+      <ul class="pagination">
+        {$article_list->render()|raw}
+      </ul>
+
+      {empty name="ifexif_page"}
+
+      <ul class="pagination">
+          <li>
+            <span>«</span>
+          </li> 
+          <li  class="active">
+            <a href="#" class="disabled">1</a>
+          </li>
+          <li class="disabled">
+            <span>»</span>
+          </li>
+      </ul>
+      <span class="pagination">
+          <form action="product" method="get">
+            <span class="form-label">跳转到:</span>
+            <input class="form-input" type="text" />
+            <input type="submit" value="go" class="form-submit" disabled>
+          </form>
+      </span>  
+      {else /}
+      <span class="pagination">
+          <form action="product" method="get">
+            <span class="form-label">跳转到:</span>
+            <input class="form-input" name="page" type="text"/>
+            <input type="submit" value="go" class="form-submit">
+          </form>
+        </span>  
+        
+      {/empty}
+
+     </div> 
+    </div> 
+
+   </div> 
+
+  </div> 
+  {include file="blog@public/footer" /}
+  {/block}
